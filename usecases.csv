@@ -1,0 +1,185 @@
+Use case id,Use case name,Base contribution,Creation date,Use case context,Use case description,Open issues,Use case category,Reference,Notes on priority of the use case,Base Contribution
+FG-AN-usecase-001,Use of knowledge in autonomous network,[FGAN-I-12-R1],21/January/2021,Discussions during ITU webinar on autonomous networks (3 November 2020),"To satisfy the key concepts of autonomous networks (evolution, experimentation and adaptation) while minimizing human intervention requires knowledge. This knowledge may include representation of data about the environment in which the autonomous system is operating, possible actions and consequences, key configuration options, potential parameter indices and other types of logic. This use case concerns use of knowledge in the actors in the AN.
+Following are related steps in this use case scenario:
+Knowledge is imported from outside or peer entities of autonomous network components
+Knowledge is referred internally in autonomous network components e.g. for driving evolution, driving exploration, configuration of automation loops etc.
+Generate report for human consumption
+Knowledge is stored and updated within the autonomous network components
+Knowledge is exported from autonomous network components to outside or peer entities.
+","- Representation mechanisms and transfer protocols for knowledge.
+- Capabilities of knowledge base (KB) component that allows storage, query, export, import and modification of knowledge using standard mechanisms is under study.
+- reference points and interfaces between AN and KB is yet to defined.",Cat 1: describes a scenario related to core autonomous behaviour itself.  ,"[b-Clark], [b-AN2020], [b-Jimenez-Ruiz], [b-Myklebust], [b-Turing]",,
+FG-AN-usecase-002,Configuring and driving simulators from autonomous components in the network,[FGAN-I-12-R1],21/January/2021,"Discussions during ITU workshop on autonomous networks, discussions during review of ITU SG 13 work item on Sandbox, discussions during ITU AI/ML in 5G Challenge 2020.","To explore and experiment with various scenarios in autonomous behaviour, the autonomous network component requires access to simulators. Simulators help evaluate the outcome of possible options without potential adverse fallouts in the real network. Long term study of simulation results is common by human researchers to understand the evolutionary needs of the network too.  In this respect, autonomous network components need to interface with, configure and drive the different simulators.  
+Following are related steps in this use case scenario:
+Autonomous network components decide the scenarios for exploration and experimentation.
+Autonomous network components interact with the Sandbox to configure specific simulators which can perform the required experimentation.
+Sandbox monitors the simulators and reports the completion of simulations.
+The results are analysed by Autonomous network components and further actions (like updating knowledge base) are taken.
+","Are simulators encapsulated in Sandbox? Or are they open to direct interface from autonomous network components?
+There are heterogeneous simulators and uniform interface with simulators do not exist. This makes their interface and configuration non-standard and difficult to implement.
+Additional scenarios like addition of new simulation capabilities, flagging of new requirement for simulation etc. need to be handled.",Cat 1: describes a scenario related to core autonomous behaviour itself.  ,[b-Y.ML-IMT2020-SANDBOX],,
+FG-AN-usecase-003,Peer-in-loop (including humans),[FGAN-I-12-R1],21/January/2021,"Discussions during ITU workshop on autonomous networks, discussions during review of ITU SG 13 work item on MLFO, discussions during ITU AI/ML in 5G Challenge 2020.","To guide the autonomous behaviour autonomous network component requires access to peers. Peers include humans and other autonomous entities. Exchange of information with peers help in taking better decisions. In this respect, autonomous network components need to interface with, exchange information with various other autonomous network components and humans.  
+
+Following are related steps in this use case scenario:
+Autonomous network components decide to take guidance from other autonomous entities (peers like humans).
+A message exchange with the peer is initiated.
+The results of the exchange are analysed by Autonomous network components and further actions (like updating knowledge base) are taken.
+","Are some peers more equal than others (e.g. humans)?
+What are the messages exchanged? e.g. request for comments? report on status? capability exchange?",Cat 1: describes a scenario related to core autonomous behaviour itself.  ,[b-Y.ML-IMT2020-MLFO],,
+FG-AN-usecase-004,Configuring and driving automation loops from autonomous components in the network,[FGAN-I-12-R1],21/January/2021,Inspired by discussions on “demand mapping” during Y.3173 and discussions during ITU AI/ML in 5G Challenge 2020.,"There are different automation loops in various domains of the network, already proposed by different standards bodies and industry bodies. To reflect the decisions of autonomous behaviour in the network, the autonomous network component requires access to automation loops. Automation loops help implement the decisions taken by the autonomous component in the network. Moreover, it is possible that automation loops provide valuable inputs for autonomous components to be considered for say further experimentation.  
+
+In this respect, autonomous network components need to interface with, configure and drive the different automation loops.  
+
+Following are related steps in this use case scenario:
+Autonomous network components decide the configurations of automation loops.
+Autonomous network components interact with the automation loops to configure specific scenarios which can perform the required automation.
+Automation loops monitor the automation and reports the status of automation.
+The results are analysed by Autonomous network components and further actions (like updating knowledge base) are taken.
+NOTE- Please see [ML5G-I-221] for an example of “influencing analytics service” for E2E service management. Question-8 discussed the possibility for ZSM framework consumer to select and provision the type of ML model to be used for domain specific analytics in ZSM scope. ","Where are the automation loops hosted? Are they open to direct interface from autonomous network components?
+There are heterogeneous automation loops and uniform interface do not exist. This makes their interface and configuration non-standard and difficult to implement.
+Additional scenarios like addition of new automation capabilities, flagging of new requirement for automation etc. need to be handled.",Cat 1: describes a scenario related to core autonomous behaviour itself.  ,[ITU-T Y.3173],,
+FG-AN-usecase-005,Domain analytics services for E2E service management ,[FGAN-I-12-R1],21/January/2021,"Based on discussions with ETSI ZSM via [ML5G-I-221] 
+Based on presentations on [FGAN-I-135].","Section 6.5.3.2 of [ETSI ZSM ARCH] describes the domain analytics services which provide domain-specific insights and generate domain-specific predictions based on data collected by domain data collection services and other data. 
+
+Following are related steps in this use case scenario:
+Autonomous network components act as a ZSM service consumer.
+ZSM provides closed loop (CL) management and other domain and cross domain services (including analytics) to AN components.
+Discovery of ZSM services is done by AN components
+ZSM service performs the E2E service management based on the interaction with autonomous network component.
+examples of interactions are: managing subscriptions, configuring analytics, request analysis results, etc. See Clause 6.5.3.2.1 of [ETSI ZSM ARCH]
+Other Examples in the context of Zero Touch provisioning mentioned in [FGAN-I-135].","Open issues (refer also those discussed in [ML5G-I-221]).
+1. Hierarchies of CL may be deployed in other AN domains and ZSM domains. In this case interoperability of these deployments may be studied.
+2. how to integrate ZSM services as “service-x”?",Cat 2: describes a scenario related to application of autonomous behaviour in the network.  ,[b-ETSI GS ZSM 002],,
+FG-AN-usecase-006,"Automation and intelligent OAM(operation, maintenance and management) of radio network ",[FGAN-I-008],,,"Background: Dynamic radio environment, network structure, user behaviour, and user distribution drive the network needs to  be monitored and optimised continually. Currently, it consumes experts a lot of time and labor work to discover problems, analyze root cause, and then formulating solutions of radio networks. Therefore, AI and big data technology is necessary to achieve full process automation and intelligent management of wireless network.
+Specifically, wireless network autonomous management  includes  real-time monitoring of data quality, quasi-real-time diagnosis of abnormal cells, root cause analysis, recommended solutions, and evaluation of processing effects.
+Real-time monitoring of data quality
+It is needed to firstly collect real-time data from the 4/5G integrated network management, then compares the consistency of the number of network elements from the data, and achieves data quality monitoring and warning through the visualization panel.
+Quasi-real-time diagnosis of abnormal cells
+Using several categories of KPI performance indicators, the ML algorithm (e.g. OneClassSVM ) is used to diagnose network elements in these categories of scenarios such as residential and colleges on a daily/weekly basis, and distribute them to frontline managers according to the abnormal probability.
+Root cause analysis and recommended solutions
+Through collecting tens of thousands of expert experiences, and radio network knowledge bases have been established through knowledge graphs to develop intelligent recommendation algorithms and search engines, and to directly  provide reasons and recommend solutions of each abnormal network element to first-line experts, thus reducing troubleshooting time and error rate.
+Evaluation of processing effects
+Through a mature evaluation system, the effectiveness of the solution to each abnormal problem is evaluated after the implementation, and then the knowledge base and recommendation algorithm are optimized, and the intelligence level of the entire process is continuously improved.",, Category 1 - Use case for autonomous behaviour,None,,
+FG-AN-usecase-007,Intelligent Energy Saving for Data Centers,[FGAN-I-008],,,"Background: The rapid growth of mobile Internet, cloud computing and other business drives the need of large-scale data centers. Data centers consume large amounts of energy to run and maintain their cooling system and facilities, servers and other devices. Traditional methods cannot efficiently reduce the energy costs of data centers. Therefore, AI mechanisms are introduced to analyze the monitoring data and adjust the configurations automatically.
+Intelligent energy saving solution include a series of autonomous behaviour, such as automatic data acquisition, AI-based energy consumption modelling and inference, facilities parameters control policies decision, facilities adjustment actions implementation, energy saving result evaluation and control policies continuous optimization.",, Category 2 - Application of autonomous behaviour,None,,
+FG-AN-usecase-008,Autonomous Massive MIMO,FGAN-I-30,27/January/2021,,"Massive MIMO is a key technology in 5G, which can effectively improve the vertical coverage and system capacity in complex scenarios by using large-scale antenna array and three-dimensional beam-forming. 
+Compared with traditional antenna, there are more dimensions of parameters to adjust for massive MIMO large-scale antenna array, including horizontal lobe width, vertical lobe width, azimuth, dip angle and beam number. Each dimension can be fine adjusted by setting a reasonable step size and theoretically and there may be tens of thousands possible combination of antenna parameter weights in a cell. Therefore, manual optimization and adjustment based on scenario/service changes can be very hard in consideration of multi-cell coordination.
+The autonomous massive MIMO use case is about helping operators quickly converge and achieve optimal adjustment of antenna parameters with AI capabilities of multi-dimensional analysis and prediction. The general workflow is: 5G base station collects position information from UE and sends it to the network management system, which then calculates the distribution of UE and finds the optimal weight combination with ML algorithms based on the target RSRP/SINR distribution in the current scenario, so as to maximize the utilization of system capacity and guarantee the user experience. ","How to achieve a balance between coverage, communication traffic and spectrum efficiency?
+How to ensure a satisfactory speed of parameter adjustment?",Cat 2: application of autonomous behaviour,,,
+FG-AN-usecase-9,Network resource allocation for emergency management based on closed loop analysis,FGAN-I-090-R2,22/April/2021,"Discussions during [FGAN-I-055-R1], [FGAN-I-054-R1], [FGAN-I-072]","Telecommunication systems are critical pillar of emergency management. A set of hierarchical AI/ML based closed loops could be used to intelligently deploy and manage slice for emergency responders in the affected area. A higher closed loop in the OSS can be used for detecting which area is affected by the emergency and deploy a slice for emergency responders to that area. It can then set a resource arbitration policy for the lower closed loop in RAN. The lower loop can use this policy to intelligently share RAN resources between the public and emergency responder slice. It can also intelligently manage ML pipelines across the edge and emergency responder devices by using split AI/ML models or offloading of inference tasks from the devices to the edge.
+Following are related steps in this use case scenario:
+MNO may instruct OSS to detect certain set of emergencies and provide connectivity to emergency responders according to predefined SLA.
+
+NOTE- e.g. this input may be provided using an operator intent.
+
+OSS might deploy a closed loop to achieve this. It might collect data from sources like network analytics data, social media scraping, input from emergency responders etc. 
+
+NOTE- e.g. such inputs may be provided from nRT-RICs or other xNFs in the network.
+
+OSS might use AI/ML models to detect emergency and deploy an ER slice to the location. It might also create high level strategy/policy to reallocate resources among the slices.
+
+NOTE- e.g. such closed loops may be hosted in non-RT RIC and may be used for predictive resource allocations to specific edge locations based on predicted needs, in turn based on detected emergency.
+NOTE- the policy to reallocate resources may depend, among other things, on the type of emergency e.g. a natural disaster, earth quake, a law and order situation, traffic accidents, etc.
+
+RAN domain might use this high-level strategy/policy and possibly other inputs from emergency responders to create a closed loop to arbitrate resources among RAN NSSIs.
+
+NOTE- e.g. such closed loops may be hosted nearer to edge e.g. nRT RIC. The policy input from higher loop may indicate, among other things, the different sources of data for the lower loop.
+
+RAN domain closed loop might also decide to offload inference tasks from ER devices to the edge or use split AI/ML model to run inference tasks on edge and ER device. This decision might be taken based on available network and compute resources.
+
+NOTE- e.g. some layers of the AI/ML model may be hosted in the wearable devices of the emergency responders, which will help in say locating of persons under distress using various inputs.
+Relation with autonomous behavior- 
+Workflows for the closed loops are independent of each other. The only interaction between closed loops is via high level intents over the inter-loop interface. 
+Closed loops can create new closed loops in other network domains without human intervention.
+Although loops are deployed in hierarchical fashion, each loop has the ability to evolve independently. It can use different models and ML pipelines as required. Each loop may move up or down the autonomy levels as defined in [ITU-T Y.3173].
+Closed loops have ability to split and provision AI/ML models to other closed loops in automated fashion.  
+By making closed loops in edge domain autonomous, we also enable lesser orchestration delay, better privacy and flexibility for verticals (e.g., industrial campus networks).
+Higher loops can use historical knowledge available to them to optimize and generalize lower loops using high-level intent. This increases efficiency of lower loops while preserving their autonomy. (e.g., higher loop might know certain kind of ML models are good for cyclone emergency management based on previous cyclones.)
+
+NOTE: This use case might be well aligned with the use case “Composable, hierarchical closed loops” in [FGAN-I-072] and others above.","1. The ""propagation"" and ""escalation"" of intents is something which needs study.
+2.  mixing the concept of ""declarative"" policies with ""top-level"" intent with the concept of (propagation/escalation) needs study.
+3. recursive decomposition coupled with recursive policy mapping
+4. The components (“nodes”) of the high-level service are decomposed into more concrete services (possibly recursively). Declarative policies must be “translated” into more concrete declarative policies on the decomposed services in conjunction. – how to do this?
+5. By coupling “event/condition/action” control loops with TOSCA’s substitution mapping feature, you can make these control loops “cascading”, i.e. they can propagate down from high-level abstract “intent” statements to low-level device reconfigurations, and they can escalate back up if necessary. This is an aspect of TOSCA policies that needs study. ",Cat 1: describes a scenario related to core autonomous behavior itself.  , [b-ETSI GS ZSM 001] ,"High
+has the potential to impact future network architectures and use cases.",
+FG-AN-usecase-010,Inter-domain service automation (IDSA) - for microfinance,AN-I-060,29/March/2021,Discussions regarding cloud interoperability in 5G use case lab,"Microfinance applications may be hosted by non-experts in 5G or any form of cloud / ICT technologies. The end-user requirements are domain-specific e.g. loan management, banking account/ledger management etc. The main stakeholders who are enterprises (e.g. banks) may be knowledgeable and would like to focus only in their business workflows (as against cloud / ICT technologies). The underlying cloud infrastructure (for that matter the application design) and the network infrastructure (5G, 6G, or (x+1)G) is immaterial to a bank / finance manager. 
+However, from a technology perspective the following rewards are desired to be reaped:
+1. Give the best end-user experience: e.g. reduce down-time for services, reduced latencies for services, security and data privacy, intelligent services, by exploiting the best cloud service deployment for the microfinance application. e.g. edge, load balancing, secure messaging across multi-cloud, hybrid-cloud, AI/ML services via distributed cloud, etc.
+2. Insulate the end-user from xG -> (x+1)G migration: by providing interoperable, standard, backward compatible networking abstraction technologies. Integrating service lifecycle management pipeline provides agility to service development and testing.
+3. Mitigate the risk of increased integration service costs: by using open source technologies, standards, benchmarking, automating in test beds.
+4. Automate: reducing human involvement reduces training costs for banks, operational costs in networks and brings other benefits like intelligent fault isolation without depending on 3rd party service providers.
+NOTE- devops [b-ISO/IEC 23167] [b-ITU-T Y.3515], CI/CD [b-ITU-T Y.3525] are examples of service lifecycle management pipelines.
+Following are related steps in this use case scenario:
+Intent based cloud service specification
+processing of intent and development, validation in Sandbox/testbed. Testbed components (e.g. simulators, data models) are selected based on intent. 
+Evaluation and analysis of test results based on key parameter indices (KPI) specifications in the intent. 
+derivation of optimal configuration, cloud service deployment, management and orchestration.
+intent based network service deployment, management and orchestration.
+Single “cockpit” for monitoring the services
+Autonomous, Intelligence-guided, technology-agnostic migration of services from one version of underlying technology to another e.g. xG -> (x+1)G and edge -> fog.
+Reports from various parts of the underlying technologies are provided to humans in regular intervals or event based.
+","1. Handling of accounting for such services is not clear.
+",Cat 2: describes a scenario related to application of autonomous behaviour in the network.  , ,"High
+Enables vertical driven applications and network evolution.",
+FG-AN-usecase-011,Autonomous vertical-driven edge service and middle-mile connectivity for rural financial inclusion (FI),AN-I-060,31/March/2021,Discussions regarding rural broadband architecture(s) and feedback from survey to banks during summer 2020,"Digital Financial Inclusion in many geographies are limited because of lack of network availability and low reliability of connection.  Frequently bank branches have to fall back on costly and complex connectivity through satellites. Other than the capital and operational aspects, the bank staff also needs to handle the link failover and maintenance activities in case of issues. Furthermore, such solutions do not allow local community to utilize the network. 
+Autonomous last hop connectivity both through 4G/5G as well as other non 3GPP heterogeneous networks need to be seamlessly enabled to operate in an affordable manner. The solution is likely to provide the following benefits:
+1. Based on the requirements from the verticals, provide connectivity for rural FI sites independent of network providers/large-Telco.
+2. Allow the connectivity to be shared with local community to ensure better return on investments.
+3. Edge compute and related infrastructure can enable more compelling deployments for digital FI as well as other verticals (e.g. short term tele-commute / interviews etc.).
+4. Automate operations and security audits: reducing human involvement in maintaining and running the edge / last hop reduces training costs for banks, operational costs in networks and brings other benefits like intelligent fault isolation without depending on 3rd party service providers, continuous audit of deployed solution for security etc.
+Following are related sub-systems and associated steps in this use case scenario:
+Deploy micro-servers/nano-data-centres for the edge.
+Enable heterogeneous network connectivity. 
+Autonomous, Intelligence-guided handling of alignment / interference / mobility related challenges for various last hop approaches. 
+Automate on-boarding of community users and community specific apps, their billing/payments etc.
+Single “cockpit” for monitoring the services and health of infra to local-bank-staff/managed-service-provider.
+Reports from various parts of the underlying technologies are provided to humans in regular intervals or event based. This includes sharing of usage details with authorized management systems, These reports may be used for tracking the usage at a granular level, mapped to the vertical and the tracking the corresponding benefits from the infrastructure e.g. for the purpose of extending subsidies to such infrastructure.
+",1. Policy framework for such an autonomous community network anchored by a specific vertical needs to be understood.,Cat 2: describes a scenario related to application of autonomous behaviour in the network.  , ,"High
+Enables vertical driven applications and network evolution.",
+FG-AN-usecase-012,Signalling flows for autonomous IMT-2020 network ,AN-I-064 ,21 March 2021,"Signalling flows between data analysis function and other network functions, to achieve self-analysis and self-optimization ","Data analysis function (DAF) is introduced in IMT-2020 network [b-ITU-T Y.3104]. The signalling flow between DAF and other network functions(e.g. SMF, PCF, NACF and AF) describes data collection and analysis result providing.
+The procedure in Figure 1 is used by DAF to collect data on event (s) related to SMF by invoking SmfEventSubscription service. 
+
+Figure 1 Signalling flow for Data Collection from SMF
+1.	The DAF subscribe to or unsubscribe from a (set of) Events(e.g. UE IP address, UP path change, PDU Session Establishment/ Release, and etc.) by invoking the SmfEventSubscription_Subscribe service operation.
+2.	The SMF notifies the DAF (e.g. with the event report) by invoking SmfEventSubscription_Notify service operation.
+The procedure in Figure 2 is used by NF service consumers (e.g. SMF) to request analytics information from DAF by invoking DafAnalysis_Request service.
+
+Figure 2 Signalling flow for Analytics Subscribe/Unsubscribe from DAF
+1.	SMF subscribes to or unsubscribe from a (set of) data analytic events by invoking the DafAnalysisSubscriptions_Subscribe service operation. 
+-Subscription requirements of data analytic events may include: 
+-Load information of UPF 
+2.	The DAF notifies the SMF about analysis events by invoking DafAnalysisSubscriptions _Notify service operation.",,Cat 1: autonomous behaviour in IMT-2020 network ,[b-Q.IMT2020-PIAS],,
+FG-AN-usecase-013,Plug/play of network instance,AN-I-072,13 April 2021,Discussions regarding FGAN-I-017 and deep dive,"Benefits of open architecture approach include:
+*) reducing CAPEX through a prosperous multi-vendor ecosystem with scale economics. However, more the number of interfaces, more the effort in integration. This needs to be mitigated using automation. 
+
+*) Rich application space enabled using hierarchical controllers. The hierarchical control loops with varying time criticalities (<10ms (at edge) < 1s (at near edge) < multi-second (at orchestrator)) were discussed in FGAN-I-017. However, provisioning of applications at various levels and corresponding coordination with capabilities of the network functions is a challenge.
+
+In this context, we introduce the use case “Plug/play of network instance” in open architecture.
+NOTE- The network instance can be network resource, network function, network slice and network services [b-ETSI GS ZSM 001].
+
+Following are related steps in this use case scenario:
+Addition of SRCs [ITU-T Y.3172]: network instance is plugged into the network. Data collection functions supported by this new SRCs are analysed.
+Bottom-up bootstrapping of infrastructure layer (using cloud orchestration), network as a service (NaaS, using ONAP), services layer (using service orchestration), based on these new SRCs.
+OR
+Top down bootstrapping of apps, services, NaaS, infrastructure, based on these new SRCs.
+","E2E automation frameworks for composition of infrastructure, NaaS and services do not exist.",Cat 1: describes a scenario related to core autonomous behaviour itself.  ,,,
+FG-AN-usecase-014,“Generative adversarial Sandbox”:  (or hybrid closed loops),FGAN-I-017,13/Apr/2021,Discussions regarding FGAN-I-017 and deep dive,"In addition to open interfaces between various RAN components, a rich ecosystem of simulators is evolving. This allows implementation of various “hybrid” closed loops – part of the closed loop (e.g. data generation) is implemented in simulators whereas rest of the closed loop (e.g. analysis and action) are implemented in another part of the test network using real network functions (NF). 
+
+In this context, we introduce the use case “Generative adversarial Sandbox: or hybrid closed loops”.
+
+Following are related steps in this use case scenario:
+Based on the inputs from the NF (e.g. data from SRC) and existing closed loops, simulator configurations and capabilities are autonomously scripted.
+Hybrid closed loops are autonomously composed – with parts of the closed loop in real NF and parts of it in simulators.
+Similar to Generative adversarial Networks, hybrid closed loops are evaluated and tested using 2-part network – one simulated and another real network functions.
+The results are analysed and ranked.","does the open interfaces extend to simulators?
+how to rank the experiments?
+data models may be different in various interfaces with simulators.",Cat 1: describes a scenario related to core autonomous behaviour itself.  , ,,
+FG-AN-usecase-015,"Open, integrated, log analysis",,FGAN-I-017,Discussions regarding FGAN-I-017 and deep dive,"Fault prediction and isolation based on log analysis is an important existing use case. Logs are generally implemented in unstructured text with no standard formats. With a disaggregated network service implementation, correlating logs from various vendors becomes a challenge. This throws cold water on the fault prediction and fault isolation algorithms based on logs.  
+
+In this context, we introduce the use case “Open, integrated, log analysis”.
+
+Following are related steps in this use case scenario:
+Collection of logs from various open interfaces and NFs
+Correlation and Analysis of the collected logs, across various open interfaces and NFs.
+Identification of optimization mechanisms based on log analysis.
+",,Cat 2: describes a scenario related to application of autonomous behaviour in the network.    ,,,FG AN 2nd virtual meeting
